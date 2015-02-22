@@ -26,9 +26,7 @@ class TimelineLite extends TweenWidget {
         
     }
     
-    public function setJs($value){
-        $this->view->registerJs($value);
-    }
+    
 
     public function to($target, $time, $options, $offset = null) {
         $view = $this->getView();

@@ -25,4 +25,7 @@ class TweenWidget extends Widget {
         self::$_view = $this->getView();
         AssetGsap::register(self::$_view);
     }
+    public function setJs($value){
+        $this->view->registerJs($value);
+    }
 }
