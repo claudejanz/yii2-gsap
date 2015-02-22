@@ -1,0 +1,22 @@
+{
+    "name": "claudejanz/yii2-gsap",
+    "description": "Yii2 gsap interation",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "BSD-4-Clause",
+    "authors": [
+        {
+            "name": "Claude Janz",
+            "email": "claude.janz@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/gsap": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "claudejanz\\gsap\\": ""
+        }
+    }
+}
