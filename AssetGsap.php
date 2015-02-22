@@ -9,10 +9,10 @@ use yii\web\AssetBundle;
  */
 class AssetGsap extends AssetBundle
 {
-    public $sourcePath = '@bower/gsap/src';
+    public $sourcePath = '@bower/gsap/src/minified';
     
     public $js = [
         //'minified/jquery.gsap.min.js',
-        'minified/TweenMax.min.js',
+        'TweenMax.min.js',
     ];
 }
