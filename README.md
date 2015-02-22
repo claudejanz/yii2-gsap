@@ -1,5 +1,7 @@
 Yii2 gsap
 =========
+[![Latest Stable Version](https://poser.pugx.org/claudejanz/yii2-gsap/v/stable.svg)](https://packagist.org/packages/claudejanz/yii2-gsap) [![Total Downloads](https://poser.pugx.org/claudejanz/yii2-gsap/downloads.svg)](https://packagist.org/packages/claudejanz/yii2-gsap) [![Latest Unstable Version](https://poser.pugx.org/claudejanz/yii2-gsap/v/unstable.svg)](https://packagist.org/packages/claudejanz/yii2-gsap) [![License](https://poser.pugx.org/claudejanz/yii2-gsap/license.svg)](https://packagist.org/packages/claudejanz/yii2-gsap)
+
 Yii2 gsap interation
 
 Installation
