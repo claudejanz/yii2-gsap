@@ -9,20 +9,23 @@ use yii\helpers\Json;
  */
 class TweenLite extends TweenWidget {
 
+    private static $_inst = "";
+
     public function __construct($config = []) { 
-        parent::init();
-        $this->addJs('var ' . $this->id . ' = new TweenLite('.Json::encode($config).');');
+        if (!isset(self::$_inst))
+            $this->addJs('var ' . $this->id . ' = new TweenLite(' . Json::encode($config) . ');');
     }
 
-    public function to($target, $time, $options) {
-        $this->addJs('var ' . $this->id . ' = TweenLite.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+    public static function to($target, $time, $options) {
+        self::$_inst = new static();
+        self::$_inst->addJs('var ' . self::$_inst->id . ' = TweenLite.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+        return self::$_inst;
     }
 
-    public function from($target, $time, $options) {
-        $this->addJs('var ' . $this->id . ' = TweenLite.from(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+    public static function from($target, $time, $options) {
+        self::$_inst = new static();
+        self::$_inst->addJs('var ' . self::$_inst->id . ' = TweenLite.from(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+        return self::$_inst;
     }
     
-   
-
-
 }

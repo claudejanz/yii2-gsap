@@ -9,20 +9,23 @@ use yii\helpers\Json;
  */
 class TweenMax extends TweenWidget {
 
-    public function __construct($config = []) { 
-        parent::init();
-        $this->addJs('var ' . $this->id . ' = new TweenMax('.Json::encode($config).');');
+    private static $_inst = "";
+
+    public function __construct($config = []) {
+        if (!isset(self::$_inst))
+            $this->addJs('var ' . $this->id . ' = new TweenMax(' . Json::encode($config) . ');');
     }
 
-    public function to($target, $time, $options) {
-        $this->addJs('var ' . $this->id . ' = TweenMax.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+    public static function to($target, $time, $options) {
+        self::$_inst = new static();
+        self::$_inst->addJs('var ' . self::$_inst->id . ' = TweenMax.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+        return self::$_inst;
     }
 
-    public function from($target, $time, $options) {
-        $this->addJs('var ' . $this->id . ' = TweenMax.from(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+    public static function from($target, $time, $options) {
+        self::$_inst = new static();
+        self::$_inst->addJs('var ' . self::$_inst->id . ' = TweenMax.from(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
+        return self::$_inst;
     }
-    
-   
-
 
 }

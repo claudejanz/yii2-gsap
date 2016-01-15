@@ -19,37 +19,20 @@ class TimelineMax extends TweenWidget {
 
     
     public function __construct($config = []) {
-        parent::init();
         $this->addJs('var ' . $this->id . ' = new TimelineMax('.Json::encode($config).');');
-        
+    }
+    
+    public function add($target) {
+        $this->addJs($this->id . '.add(' . $target . ');');
+        return $this;
     }
     
     
 
-    public function to($target, $time, $options, $offset = null) {
-        $view = $this->getView();
-        if ($offset) {
-
-            $this->addJs($this->id . '.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ',\'' . $offset . '\');');
-        } else {
-
-            $this->addJs($this->id . '.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
-        }
-        
-    }
-
-    public function from($target, $time, $options, $offset = null) {
-        $view = $this->getView();
-        if ($offset) {
-
-            $this->addJs($this->id . '.from(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ',\'' . $offset . '\');');
-        } else {
-
-            $this->addJs($this->id . '.from(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
-        }
-    }
+   
     public function reverse() {
         $this->addJs($this->id . '.reverse();');
+        return $this;
     }
     
 }
