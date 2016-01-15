@@ -15,7 +15,7 @@ use yii\helpers\Json;
  *
  * @author Claude
  */
-class TimelineLite extends JsWidget {
+class TimelineLite extends TweenWidget {
 
     
     public function __construct($config = []) {

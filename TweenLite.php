@@ -7,7 +7,7 @@ use yii\helpers\Json;
 /**
  * This is just an example.
  */
-class TweenLite extends JsWidget {
+class TweenLite extends TweenWidget {
 
     public function __construct($config = []) { 
         parent::init();

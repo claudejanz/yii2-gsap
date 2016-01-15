@@ -15,7 +15,7 @@ use yii\helpers\Json;
  *
  * @author Claude
  */
-class TimelineMax extends JsWidget {
+class TimelineMax extends TweenWidget {
 
     
     public function __construct($config = []) {
