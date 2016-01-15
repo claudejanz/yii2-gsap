@@ -11,16 +11,16 @@ namespace claudejanz\gsap;
 use yii\helpers\Json;
 
 /**
- * Description of TimelineLite
+ * Description of TimelineMax
  *
  * @author Claude
  */
-class TimelineLite extends JsWidget {
+class TimelineMax extends JsWidget {
 
     
     public function __construct($config = []) {
         parent::init();
-        $this->addJs('var ' . $this->id . ' = new TimelineLite('.Json::encode($config).');');
+        $this->addJs('var ' . $this->id . ' = new TimelineMax('.Json::encode($config).');');
         
     }
     
@@ -35,7 +35,6 @@ class TimelineLite extends JsWidget {
 
             $this->addJs($this->id . '.to(\'' . $target . '\',' . $time . ',' . Json::encode($options) . ');');
         }
-        return $this;
         
     }
 

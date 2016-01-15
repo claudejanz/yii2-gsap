@@ -16,16 +16,18 @@ use yii\base\Widget;
  *
  * @author Claude
  */
-class TweenWidget extends Widget {
+class JsWidget extends Widget {
     
-   protected static $_view;
   
    public function init() {
         parent::init();
-        self::$_view = $this->getView();
-        AssetGsap::register(self::$_view);
+        AssetGsap::register($this->getView());
     }
-    public function setJs($value){
+    public function addJs($value){
         $this->view->registerJs($value);
+    }
+    
+    public function __toString() {
+        return $this->id;
     }
 }
