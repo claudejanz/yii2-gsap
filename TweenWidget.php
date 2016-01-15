@@ -17,8 +17,6 @@ use claudejanz\js\JsWidget;
  * @author Claude
  */
 class TweenWidget extends JsWidget {
-    
-  
    public function init() {
         parent::init();
         AssetGsap::register($this->getView());
