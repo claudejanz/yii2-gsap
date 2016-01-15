@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 /**
  * This is just an example.
  */
-class AssetGsap extends AssetBundle
+class AssetGsapLite extends AssetBundle
 {
    public $depends = [
         'yii\web\JqueryAsset',
@@ -18,7 +18,7 @@ class AssetGsap extends AssetBundle
     
     public $js = [
         //'minified/jquery.gsap.min.js',
-        'TweenMax.min.js',
-        'TimelineMax.min.js',
+        'TweenLite.min.js',
+        'TimelineLite.min.js',
     ];
 }

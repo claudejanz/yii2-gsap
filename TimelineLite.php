@@ -8,7 +8,6 @@
 
 namespace claudejanz\gsap;
 
-
 use yii\helpers\Json;
 
 /**
@@ -19,10 +18,9 @@ use yii\helpers\Json;
 class TimelineLite extends TweenWidget {
 
     
-    public function init() {
+    public function __construct($config = []) {
         parent::init();
-        $view = $this->getView();
-        $this->setJs('var ' . $this->id . ' = new TimelineLite();');
+        $this->setJs('var ' . $this->id . ' = new TimelineLite('.Json::encode($config).');');
         
     }
     
@@ -53,4 +51,5 @@ class TimelineLite extends TweenWidget {
     public function reverse() {
         $this->setJs($this->id . '.reverse();');
     }
+    
 }
