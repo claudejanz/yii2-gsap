@@ -20,6 +20,7 @@ class TimelineLite extends TweenWidget {
     
     public function __construct($config = []) {
         $this->addJs('var ' . $this->id . ' = new TimelineLite('.Json::encode($config).');');
+        parent::init();
         
     }
     

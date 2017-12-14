@@ -20,6 +20,7 @@ class TimelineMax extends TweenWidget {
     
     public function __construct($config = []) {
         $this->addJs('var ' . $this->id . ' = new TimelineMax('.Json::encode($config).');');
+        parent::init();
     }
     
     public function add($target) {
