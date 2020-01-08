@@ -13,12 +13,12 @@ class AssetGsap extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
-    
-    public $sourcePath = '@bower/gsap/src/minified';
-    
+
+    public $sourcePath = '@bower/gsap/dist';
+
     public $js = [
-        //'minified/jquery.gsap.min.js',
-        'TweenMax.min.js',
-        'TimelineMax.min.js',
+        'gsap.min.js',
+        //'TweenMax.min.js',
+        //'TimelineMax.min.js',
     ];
 }
