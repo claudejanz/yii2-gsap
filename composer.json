@@ -12,7 +12,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "claudejanz/yii2-js": "*"
+        "claudejanz/yii2-js": "*",
+        "bower-asset/gsap": "*"
     },
     "autoload": {
         "psr-4": {
